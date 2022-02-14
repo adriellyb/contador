@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Contador</title>
+</head>
+
+<body>
+    <!-- Floating Shapes -->
+    <img src="../assets/shape1.png" alt="" class="shape1">
+    <img src="../assets/shape2.png" alt="" class="shape2">
+
+    <!-- Content -->
+    <div class="container">
+
+        <div class="content">
+            <img src="../assets/shape3.png" alt="" class="shape3">
+
+            <h2 class="title">Contador</h2>
+            <h3 class="subtitle">Informe uma data:</h3>
+
+            <!-- Counter Input Form -->
+            <form action="/contador.html" method="post">
+                <input type="date" class="data" id="data">
+                <input type="button" class="botao" value="Iniciar contagem" onclick="getData()" />
+            </form>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function getData() {
+            /*pegando o data inserida no input*/
+            var data = document.getElementById("data").value;
+
+            /*transformando em string*/
+            var data_str = String(data);
+
+            /*validando a data inserida para que ela não seja uma data que já passou*/
+            if (data)
+                if (new Date() < new Date(data_str)) {
+                    localStorage.setItem("data", data_str);
+                    window.location = 'counter.html'
+                }
+                else {
+                    openModal("Não é possível calcular com uma data anterior a de hoje!");
+                }
+            else {
+                openModal("Esta data não existe!");
+            }
+        }
+
+        function openModal(message) {
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            //
+            document.getElementById("message").innerText = message;
+
+            // When the user clicks the button, open the modal 
+            modal.style.display = "block";
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
