@@ -27,3 +27,4 @@ Todos os agradecimentos ao <a href="https://devchallenge.now.sh/">DevChallenge</
 
 ### Referências
 
+- Projeto inicial clonado do <a href="https://github.com/Lorenalgm/contador">deste repositório</a>.
