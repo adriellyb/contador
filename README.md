@@ -21,7 +21,7 @@ Todos os agradecimentos ao <a href="https://devchallenge.now.sh/">DevChallenge</
 
 ### Desenvolvedora
 
-- [Adrielly Balbino](linkedin.com/in/adrielly-balbino/)
+- [Adrielly Balbino](https://linkedin.com/in/adrielly-balbino/)
 
 ### Tecnologias
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
